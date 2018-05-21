@@ -39,7 +39,10 @@
             this._labelAccessToken = new System.Windows.Forms.Label();
             this._labelUsername = new System.Windows.Forms.Label();
             this._labelPassword = new System.Windows.Forms.Label();
+            this._checkBoxUseAccessToken = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBoxMain)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _tbResponse
@@ -52,9 +55,9 @@
             // 
             // _pictureBoxMain
             // 
-            this._pictureBoxMain.Location = new System.Drawing.Point(12, 12);
+            this._pictureBoxMain.Location = new System.Drawing.Point(3, 3);
             this._pictureBoxMain.Name = "_pictureBoxMain";
-            this._pictureBoxMain.Size = new System.Drawing.Size(640, 360);
+            this._pictureBoxMain.Size = new System.Drawing.Size(634, 374);
             this._pictureBoxMain.TabIndex = 1;
             this._pictureBoxMain.TabStop = false;
             // 
@@ -137,11 +140,35 @@
             this._labelPassword.TabIndex = 10;
             this._labelPassword.Text = "Password";
             // 
+            // _checkBoxUseAccessToken
+            // 
+            this._checkBoxUseAccessToken.AutoSize = true;
+            this._checkBoxUseAccessToken.Location = new System.Drawing.Point(754, 460);
+            this._checkBoxUseAccessToken.Name = "_checkBoxUseAccessToken";
+            this._checkBoxUseAccessToken.Size = new System.Drawing.Size(164, 17);
+            this._checkBoxUseAccessToken.TabIndex = 11;
+            this._checkBoxUseAccessToken.Text = "Use access token (Checked)";
+            this._checkBoxUseAccessToken.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this._pictureBoxMain, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(640, 380);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 491);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this._checkBoxUseAccessToken);
             this.Controls.Add(this._labelPassword);
             this.Controls.Add(this._labelUsername);
             this.Controls.Add(this._labelAccessToken);
@@ -151,11 +178,11 @@
             this.Controls.Add(this._listBoxAllURI);
             this.Controls.Add(this._btnSendRequest);
             this.Controls.Add(this._btnPickImg);
-            this.Controls.Add(this._pictureBoxMain);
             this.Controls.Add(this._tbResponse);
             this.Name = "Main";
             this.Text = "Simple API Client";
             ((System.ComponentModel.ISupportInitialize)(this._pictureBoxMain)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,6 +201,8 @@
         private System.Windows.Forms.Label _labelAccessToken;
         private System.Windows.Forms.Label _labelUsername;
         private System.Windows.Forms.Label _labelPassword;
+        private System.Windows.Forms.CheckBox _checkBoxUseAccessToken;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 
