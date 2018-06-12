@@ -1,0 +1,114 @@
+﻿<p>Выберите изображение:</p>
+<input id="inputFileToLoad" type="file" onchange="loadImageFileAsURL();" />
+<p>File Contents as DataURL:</p>
+<textarea id="textAreaFileContents" style="width:320;height:240"></textarea>
+<p>Send</p>
+<input type="submit" onclick="uploadPicture();" value="OCR" />
+<div id="text"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+            function uploadPicture()
+            {
+                //Prepare form data
+                var formData = new FormData();
+                formData.append("file", $("#inputFileToLoad")[0].files[0]);
+                callService(formData);
+            }
+
+            function callService(formData)
+            {
+
+                //2
+                var request = require('request');
+
+           
+                var xhr = new XMLHttpRequest();
+
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("Authorization", "BEARER " + "ce5e8d096835426a927543c438d56cbc");
+                },
+
+                xhr.open("POST", "http://localhost:8002/api/f/detection?algorythm=neuro");
+                xhr.send(formData);
+
+
+
+
+                //1
+                //Send OCR Parsing request asynchronously
+                //jQuery.ajax({
+                //    url: "http://localhost:8002/api/f/detection?algorythm=neuro",
+                //    data: formData,
+                //    headers: {
+                //        'Content-Type': "multipart/form-data",
+                //        //'Authorization': "Bearer ce5e8d096835426a927543c438d56cbc",
+                //        'Cache-Control': 'no-cache'
+                //    },
+
+                //    //dataType: 'json',
+                //    //cache: false,
+                //    //contentType: false,
+                //    processData: false,
+
+                //    beforeSend: function (xhr) {
+                //        xhr.setRequestHeader("Authorization", "BEARER " + "ce5e8d096835426a927543c438d56cbc");
+                //    },
+
+                //    type: 'POST',
+                //    success: function (ocrParsedResult) {
+                //        //Get the parsed results, exit code and error message and details
+                //        console.log("Успех!");
+
+
+                //        console.log("Result: " + ocrParsedResult);
+                //        $("#text").html(ocrParsedResult["status"]);
+
+
+
+
+                //        var parsedResults = ocrParsedResult["ParsedResults"];
+                //        var ocrExitCode = ocrParsedResult["OCRExitCode"];
+                //        var isErroredOnProcessing = ocrParsedResult["IsErroredOnProcessing"];
+                //        var errorMessage = ocrParsedResult["ErrorMessage"];
+                //        var errorDetails = ocrParsedResult["ErrorDetails"];
+                //        //If we have got parsed results, then loop over the results to do something
+                //        if (parsedResults != null) {
+                //            //Uncomment these lines if parsing multiple results
+                //            $.each(parsedResults, function (index, value) {
+                //                var exitCode = value["FileParseExitCode"];
+                //                var parsedText = value["ParsedText"];
+                //                var errorMessage = value["ParsedTextFileName"];
+                //                var errorDetails = value["ErrorDetails"];
+
+                //                console.log("OCR: " + parsedText);
+                //                $("#text").html( parsedText);
+                //            });
+                //        }
+                //    }
+                //});
+
+                //3
+                jQuery.ajax({
+                    url: 'http://localhost:8002/api/status',
+                    //url: "http://localhost:8002/api/f/detection?algorythm=neuro",
+                    type: 'GET',
+                    //data: { content: formData },
+                    beforeSend: function (xhr) {
+                        //xhr.setRequestHeader("Authorization", "BEARER " + "ce5e8d096835426a927543c438d56cbc");
+                    },
+                    success: function (response) {
+                        // response
+                        console.log("Успех запроса Status!");
+                    }
+                });
+
+
+            }
+
+</script>
+
+
+
+
