@@ -67,8 +67,6 @@
     <Compile Include="ApiPrefixes.cs" />
     <Compile Include="ApiSuffixes.cs" />
     <Compile Include="Credentials.cs" />
-    <Compile Include="Detection.cs" />
-    <Compile Include="DetectionResult.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
