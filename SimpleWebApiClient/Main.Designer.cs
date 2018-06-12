@@ -251,8 +251,8 @@
             this.RCNNToolStripMenuItem,
             this.HaarCascadeToolStripMenuItem});
             this.LocalizationToolStripMenuItem.Name = "LocalizationToolStripMenuItem";
-            this.LocalizationToolStripMenuItem.Size = new System.Drawing.Size(102, 20);
-            this.LocalizationToolStripMenuItem.Text = "Распознавание";
+            this.LocalizationToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.LocalizationToolStripMenuItem.Text = "Локализация";
             // 
             // RCNNToolStripMenuItem
             // 
@@ -345,9 +345,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(655, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 13);
+            this.label3.Size = new System.Drawing.Size(147, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "URI отправляемого запроса";
+            this.label3.Text = "URI совершенного запроса";
             // 
             // _tbResponse
             // 
